@@ -6,12 +6,13 @@ interface ICreateClient {
     password: string
 }
 
-
 export class CreateClientUseCase {
     async execute({ password, username }: ICreateClient) {
-        const clientExists = await prisma.client.findUnique({
+        const clientExists = await prisma.client.findFirst({
             where: {
-                username
+                username: {
+                    equals: username
+                }
             }
         })
         if (clientExists) {
