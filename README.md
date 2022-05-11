@@ -24,7 +24,7 @@ Src folder contains all of our business logic regarding the three main entities:
     - NodeJS - v16.14.0
 
 ## How to Run it
-```javascript
+```bash
 yarn install
 
 yarn dev
